@@ -18,7 +18,7 @@
 # limitations under the License.
 #
 
-default['wix']['url']       = 'http://wix.sourceforge.net/releases/3.6.2109.0/wix36-binaries.zip'
-default['wix']['checksum']  = '14d1ba5b3f4e3377c6a0e768d5dacd0c5231f0cc233de41e4126b29582656f55'
+default['wix']['url']       = 'http://wixtoolset.org/releases/v3.6.2928.0/wix36-binaries.zip'
+default['wix']['checksum']  = 'c90319e4b6f4f1626f9e417f925497fe9b4af0ce221d3d8023f8276468e3044d'
 
 default['wix']['home']    = "#{ENV['SYSTEMDRIVE']}\\wix"
