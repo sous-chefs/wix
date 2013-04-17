@@ -18,7 +18,8 @@
 # limitations under the License.
 #
 
-default['wix']['url']       = 'http://wixtoolset.org/releases/v3.6.2928.0/wix36-binaries.zip'
-default['wix']['checksum']  = 'c90319e4b6f4f1626f9e417f925497fe9b4af0ce221d3d8023f8276468e3044d'
+# WiX v3.6
+default['wix']['download_id'] = '482066'
+default['wix']['checksum']    = '3b0783c3d295cb21a24f3fee68ad7929989771d145c5ac92acc4bc68cf7163b4'
 
 default['wix']['home']    = "#{ENV['SYSTEMDRIVE']}\\wix"

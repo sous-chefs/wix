@@ -3,7 +3,7 @@
 # Cookbook Name:: wix
 # Recipe:: default
 #
-# Copyright 2011, Opscode, Inc.
+# Copyright 2011-2013, Opscode, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,10 +18,11 @@
 # limitations under the License.
 #
 
-file_name = ::File.basename(node['wix']['url'])
+download_url = CodePlex.download_url('wix', node['wix']['download_id'])
+file_name = "wix-binaries.zip"
 
 remote_file "#{Chef::Config[:file_cache_path]}/#{file_name}" do
-  source node['wix']['url']
+  source download_url
   checksum node['wix']['checksum']
   notifies :unzip, "windows_zipfile[wix]", :immediately
 end
