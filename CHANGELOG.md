@@ -2,10 +2,14 @@
 
 * Resource/Provider for creating individual WiX projects.
 
-## 1.0.2:
+## v1.1.0:
+
+* [COOK-2762] - WiX download URL returns a 404
+
+## v1.0.2:
 
 * [COOK-1340] - update version and location
 
-## 1.0.0:
+## v1.0.0:
 
 * initial release
