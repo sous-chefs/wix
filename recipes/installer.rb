@@ -1,9 +1,9 @@
-#
-# Author:: Seth Chisamore (<schisamo@opscode.com>)
+# encoding: UTF-8
+# Author:: Shawn Weitzel(<sweitzel74@gmail.com>)
 # Cookbook Name:: wix
-# Recipe:: default
+# Recipe:: installer
 #
-# Copyright 2011-2013, Opscode, Inc.
+# Copyright 2014, Changepoint Corporation.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,22 +18,10 @@
 # limitations under the License.
 #
 
-download_url = CodePlex.download_url('wix', node['wix']['binaries_zip_download_id'])
-file_name = "wix-binaries.zip"
+download_url = CodePlex.download_url('wix', node['wix']['installer_download_id'])
 
-remote_file "#{Chef::Config[:file_cache_path]}/#{file_name}" do
+windows_package node['wix']['package_name'] do
   source download_url
-  checksum node['wix']['binaries_zip_checksum']
-  notifies :unzip, "windows_zipfile[wix]", :immediately
-end
-
-windows_zipfile "wix" do
-  path node['wix']['home']
-  source "#{Chef::Config[:file_cache_path]}/#{file_name}"
-  action :nothing
-end
-
-# update path
-windows_path node['wix']['home'] do
- action :add
+  checksum node['wix']['installer_checksum']
+  action :install
 end
