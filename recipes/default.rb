@@ -29,6 +29,7 @@ end
 
 windows_zipfile "wix" do
   path node['wix']['home']
+  overwrite true
   source "#{Chef::Config[:file_cache_path]}/#{file_name}"
   action :nothing
 end
