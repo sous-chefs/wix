@@ -14,20 +14,21 @@
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
+# See the License for the specify
+ic language governing permissions and
 # limitations under the License.
 #
 
 download_url = CodePlex.download_url('wix', node['wix']['binaries_zip_download_id'])
-file_name = "wix-binaries.zip"
+file_name = node['wix']['binaries_zip_file_name']
 
 remote_file "#{Chef::Config[:file_cache_path]}/#{file_name}" do
   source download_url
   checksum node['wix']['binaries_zip_checksum']
-  notifies :unzip, "windows_zipfile[wix]", :immediately
+  notifies :unzip, 'windows_zipfile[wix]', :immediately
 end
 
-windows_zipfile "wix" do
+windows_zipfile 'wix' do
   path node['wix']['home']
   overwrite true
   source "#{Chef::Config[:file_cache_path]}/#{file_name}"

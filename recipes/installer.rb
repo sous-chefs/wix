@@ -18,10 +18,21 @@
 # limitations under the License.
 #
 
-download_url = CodePlex.download_url('wix', node['wix']['installer_download_id'])
+include_recipe 'dotnetframework'
 
-windows_package node['wix']['package_name'] do
+download_url = CodePlex.download_url('wix', node['wix']['installer_download_id'])
+file_name = node['wix']['installer_file_name']
+
+remote_file "#{Chef::Config[:file_cache_path]}/#{file_name}" do
   source download_url
   checksum node['wix']['installer_checksum']
-  action :install
+  notifies :install, "windows_package[#{node['wix']['package_name']}]", :immediately
+end
+
+windows_package node['wix']['package_name'] do
+  source "#{Chef::Config[:file_cache_path]}/#{file_name}"
+  checksum node['wix']['installer_checksum']
+  installer_type :custom
+  options '/quiet /log wixinstall.log'
+  action :nothing
 end
