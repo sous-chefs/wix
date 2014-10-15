@@ -19,9 +19,9 @@
 #
 
 # WiX v3.6
-default['wix']['binaries_zip_download_id'] = 
+default['wix']['binaries_zip_download_id'] =
   '482066'
-default['wix']['binaries_zip_checksum'] = 
+default['wix']['binaries_zip_checksum'] =
   '3b0783c3d295cb21a24f3fee68ad7929989771d145c5ac92acc4bc68cf7163b4'
 default['wix']['binaries_zip_file_name'] =
   'wix-binaries.zip'
@@ -33,5 +33,5 @@ default['wix']['installer_file_name'] =
   'WiX36.exe'
 default['wix']['package_name'] =
   'WiX Toolset v3.6.3303.1'
-default['wix']['home'] = 
+default['wix']['home'] =
   "#{ENV['SYSTEMDRIVE']}\\wix"

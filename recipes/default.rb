@@ -36,5 +36,5 @@ end
 
 # update path
 windows_path node['wix']['home'] do
- action :add
+  action :add
 end
