@@ -3,8 +3,9 @@ require 'minitest/spec'
 class WixInstallTest < MiniTest::Chef::TestCase
 
   def test_wix_installed
-    result = system 'wmic product get Name|findstr /c:"WiX Toolset v3.6 Core"'
-    assert_equal(true, result, msg = 'WiX Toolset v3.6 Core')
+    result = system 'wmic product get Name|' \
+      'findstr /r /c:"WiX[ ]Toolset[ ]v[0-9][0-9]*\.[0-9][0-9]*[ ]Core"'
+    assert_equal(result, true, msg = 'Unable to find WiX Toolset installation.')
   end
 
 end
