@@ -11,7 +11,8 @@ class CodePlex
   def self.download_url(project_name, download_id)
     download_url = nil
 
-    http = Net::HTTP.new("#{project_name}.codeplex.com")
+    proxy_uri = URI.parse(Chef::Config[:http_proxy] || "")
+    http = Net::HTTP.new("#{project_name}.codeplex.com", 80, proxy_uri.host, proxy_uri.port)
 
     # GET /downloads/get/:ID for cookie and token
     resp = http.get("/downloads/get/#{download_id}")
