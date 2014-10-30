@@ -15,7 +15,7 @@ class CodePlex
 
     # GET /downloads/get/:ID for cookie and token
     resp = http.get("/downloads/get/#{download_id}")
-    cookie = resp.to_hash['set-cookie'].collect{|ea|ea[/^.*?;/]}.join
+    cookie = resp.to_hash['set-cookie'].collect { |ea| ea[/^.*?;/] } .join
 
     if resp.is_a?(Net::HTTPSuccess)
 
@@ -28,9 +28,11 @@ class CodePlex
         'Content-Type' => 'application/x-www-form-urlencoded'
       }
 
-      post_data = "fileId=#{download_id}&clickOncePath=&allowRedirectToAds=false&__RequestVerificationToken=#{token}"
+      post_data =
+        "fileId=#{download_id}" \
+          "&clickOncePath=&allowRedirectToAds=false&__RequestVerificationToken=#{token}"
 
-      resp = http.post("/releases/captureDownload", post_data, post_headers)
+        resp = http.post('/releases/captureDownload', post_data, post_headers)
 
       if resp.is_a?(Net::HTTPSuccess)
         download_url = Chef::JSONCompat.from_json(resp.body)['RedirectUrl']

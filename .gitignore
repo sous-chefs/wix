@@ -1,0 +1,13 @@
+.vagrant
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+/cookbooks
+version.txt
+
+# Bundler
+bin/*
+.bundle/*

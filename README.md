@@ -27,10 +27,16 @@ Attributes
 
 * `node['wix']['home']` - location to install WiX files to.  default is
   `%SYSTEMDRIVE%\wix`
-* `node['wix']['download_id']` - CodePlex download id of the WiX binaries to
+* `node['wix']['binaries_zip_download_id']` - CodePlex download id of the WiX binaries to
    install. default is `482066` (WiX v3.6)
-* `node['wix']['checksum']` - SHA256 of the WiX binaries zip file. default is
+* `node['wix']['binaries_zip_checksum']` - SHA256 of the WiX binaries zip file. default is
   `3b0783c3d295cb21a24f3fee68ad7929989771d145c5ac92acc4bc68cf7163b4`
+* `node['wix']['installer_download_id']` - CodePlex download id of the WiX installer to
+   execute. default is `482065` (WiX v3.6)
+* `node['wix']['installer_checksum']` - SHA256 of the WiX installer file. default is
+  `6aca5133d4da7d79ec6a2ca658e67b591545fff5b8721b2a74474e51651ead19`
+* `node['wix']['package_name']` - Package name of the installer.  default is
+  `WiX Toolset v3.6.3303.1`
 
 Usage
 =====
@@ -38,8 +44,13 @@ Usage
 default
 -------
 
-Downloads and installs WiX to the location specified by `node['wix']['home']`.
+Downloads and unzips WiX binaries to the location specified by `node['wix']['home']`.
 Also ensures `node['wix']['home']` is in the system path.
+
+installer
+---------
+
+Downloads and installs WiX using install executable.  This enables WiX integration with Visual Studio.
 
 License and Author
 ==================

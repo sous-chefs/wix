@@ -19,7 +19,19 @@
 #
 
 # WiX v3.6
-default['wix']['download_id'] = '482066'
-default['wix']['checksum']    = '3b0783c3d295cb21a24f3fee68ad7929989771d145c5ac92acc4bc68cf7163b4'
-
-default['wix']['home']    = "#{ENV['SYSTEMDRIVE']}\\wix"
+default['wix']['binaries_zip_download_id'] =
+  '482066'
+default['wix']['binaries_zip_checksum'] =
+  '3b0783c3d295cb21a24f3fee68ad7929989771d145c5ac92acc4bc68cf7163b4'
+default['wix']['binaries_zip_file_name'] =
+  'wix-binaries.zip'
+default['wix']['installer_download_id'] =
+  '482065'
+default['wix']['installer_checksum'] =
+  '6aca5133d4da7d79ec6a2ca658e67b591545fff5b8721b2a74474e51651ead19'
+default['wix']['installer_file_name'] =
+  'WiX36.exe'
+default['wix']['package_name'] =
+  'WiX Toolset v3.6.3303.1'
+default['wix']['home'] =
+  "#{ENV['SYSTEMDRIVE']}\\wix"

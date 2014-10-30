@@ -1,9 +1,9 @@
-#
-# Author:: Seth Chisamore (<schisamo@opscode.com>)
+# encoding: UTF-8
+# Author:: Shawn Weitzel(<sweitzel74@gmail.com>)
 # Cookbook Name:: wix
-# Recipe:: default
+# Recipe:: installer
 #
-# Copyright 2011-2013, Opscode, Inc.
+# Copyright 2014, Changepoint Corporation.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,23 +18,21 @@
 # limitations under the License.
 #
 
-download_url = CodePlex.download_url('wix', node['wix']['binaries_zip_download_id'])
-file_name = node['wix']['binaries_zip_file_name']
+include_recipe 'dotnetframework'
+
+download_url = CodePlex.download_url('wix', node['wix']['installer_download_id'])
+file_name = node['wix']['installer_file_name']
 
 remote_file "#{Chef::Config[:file_cache_path]}/#{file_name}" do
   source download_url
-  checksum node['wix']['binaries_zip_checksum']
-  notifies :unzip, 'windows_zipfile[wix]', :immediately
+  checksum node['wix']['installer_checksum']
+  notifies :install, "windows_package[#{node['wix']['package_name']}]", :immediately
 end
 
-windows_zipfile 'wix' do
-  path node['wix']['home']
-  overwrite true
+windows_package node['wix']['package_name'] do
   source "#{Chef::Config[:file_cache_path]}/#{file_name}"
+  checksum node['wix']['installer_checksum']
+  installer_type :custom
+  options '/quiet /log wixinstall.log'
   action :nothing
-end
-
-# update path
-windows_path node['wix']['home'] do
-  action :add
 end
