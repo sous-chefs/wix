@@ -19,15 +19,15 @@
 #
 
 download_url = CodePlex.download_url('wix', node['wix']['download_id'])
-file_name = "wix-binaries.zip"
+file_name = 'wix-binaries.zip'
 
 remote_file "#{Chef::Config[:file_cache_path]}/#{file_name}" do
   source download_url
   checksum node['wix']['checksum']
-  notifies :unzip, "windows_zipfile[wix]", :immediately
+  notifies :unzip, 'windows_zipfile[wix]', :immediately
 end
 
-windows_zipfile "wix" do
+windows_zipfile 'wix' do
   path node['wix']['home']
   source "#{Chef::Config[:file_cache_path]}/#{file_name}"
   action :nothing
@@ -35,5 +35,5 @@ end
 
 # update path
 windows_path node['wix']['home'] do
- action :add
+  action :add
 end

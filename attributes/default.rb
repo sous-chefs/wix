@@ -22,4 +22,4 @@
 default['wix']['download_id'] = '482066'
 default['wix']['checksum']    = '3b0783c3d295cb21a24f3fee68ad7929989771d145c5ac92acc4bc68cf7163b4'
 
-default['wix']['home']    = "#{ENV['SYSTEMDRIVE']}\\wix"
+default['wix']['home'] = "#{ENV['SYSTEMDRIVE']}\\wix"

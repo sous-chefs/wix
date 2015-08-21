@@ -3,7 +3,6 @@ require 'net/http'
 require 'chef/json_compat'
 
 class CodePlex
-
   # Downloading files from CodePlex requires a cookie and a Request
   # Verification Token. We capture the cookie and token with an initial GET
   # request followed by a post which returns JSON with a final download URL for
@@ -15,7 +14,7 @@ class CodePlex
 
     # GET /downloads/get/:ID for cookie and token
     resp = http.get("/downloads/get/#{download_id}")
-    cookie = resp.to_hash['set-cookie'].collect{|ea|ea[/^.*?;/]}.join
+    cookie = resp.to_hash['set-cookie'].collect { |ea| ea[/^.*?;/] }.join
 
     if resp.is_a?(Net::HTTPSuccess)
 
@@ -30,7 +29,7 @@ class CodePlex
 
       post_data = "fileId=#{download_id}&clickOncePath=&allowRedirectToAds=false&__RequestVerificationToken=#{token}"
 
-      resp = http.post("/releases/captureDownload", post_data, post_headers)
+      resp = http.post('/releases/captureDownload', post_data, post_headers)
 
       if resp.is_a?(Net::HTTPSuccess)
         download_url = Chef::JSONCompat.from_json(resp.body)['RedirectUrl']
@@ -39,5 +38,4 @@ class CodePlex
 
     download_url
   end
-
 end
