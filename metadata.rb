@@ -9,5 +9,5 @@ supports 'windows'
 
 depends 'windows', '>= 1.2.2'
 
-source_url 'https://github.com/opscode-cookbooks/wix' if respond_to?(:source_url)
-issues_url 'https://github.com/opscode-cookbooks/wix/issues' if respond_to?(:source_url)
+source_url 'https://github.com/chef-cookbooks/wix' if respond_to?(:source_url)
+issues_url 'https://github.com/chef-cookbooks/wix/issues' if respond_to?(:issues_url)
