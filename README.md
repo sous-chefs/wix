@@ -1,5 +1,8 @@
-Description
-===========
+WIX Cookbook
+============
+[![Build Status](https://travis-ci.org/chef-cookbooks/wix.svg?branch=master)](http://travis-ci.org/chef-cookbooks/wix)
+[![Cookbook Version](https://img.shields.io/cookbook/v/wix.svg)](https://supermarket.chef.io/cookbooks/wix)
+
 
 The [Windows Installer XML](http://wix.sourceforge.net/) (WiX) is a toolset
 that builds Windows installation packages from XML source code. The toolset
@@ -46,7 +49,8 @@ License and Author
 
 Author:: Seth Chisamore (<schisamo@opscode.com>)
 
-Copyright:: 2011-2013, Opscode, Inc.
+```text
+Copyright 2011-2015, Chef Software, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -59,4 +63,4 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
+```
