@@ -31,9 +31,9 @@ Attributes
 * `node['wix']['home']` - location to install WiX files to.  default is
   `%SYSTEMDRIVE%\wix`
 * `node['wix']['download_id']` - CodePlex download id of the WiX binaries to
-   install. default is `482066` (WiX v3.6)
+   install. default is `1483378` (WiX v3.10)
 * `node['wix']['checksum']` - SHA256 of the WiX binaries zip file. default is
-  `3b0783c3d295cb21a24f3fee68ad7929989771d145c5ac92acc4bc68cf7163b4`
+  `b92d1555a1cedb4cf96c319dd60254bac8e7f6e5d85167b12e9fbfbc1bac87ab`
 
 Usage
 =====

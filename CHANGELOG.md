@@ -2,6 +2,10 @@ wix Cookbook CHANGELOG
 ======================
 This file is used to list changes made in each version of the wix cookbook.
 
+## Unreleased
+
+* Update to use WIX Toolset 3.10
+
 ## Future
 
 * Resource/Provider for creating individual WiX projects.
