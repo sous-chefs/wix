@@ -22,7 +22,7 @@ Requirements
 
 
 Attributes
-==========
+----------
 
 * `node['wix']['home']` - location to install WiX files to.  default is
   `%SYSTEMDRIVE%\wix`
@@ -32,10 +32,9 @@ Attributes
   `b92d1555a1cedb4cf96c319dd60254bac8e7f6e5d85167b12e9fbfbc1bac87ab`
 
 Usage
-=====
+-----
 
-default
--------
+###default.rb
 
 Downloads and installs WiX to the location specified by `node['wix']['home']`.
 Also ensures `node['wix']['home']` is in the system path.
