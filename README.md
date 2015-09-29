@@ -11,19 +11,15 @@ build processes to build MSI and MSM setup packages. This cookbook installs the
 full WiX suite of tools.
 
 Requirements
-============
-
-Platform
---------
-
+------------
+#### Platforms
 * Windows Server 2003 R2
 * Windows 7
 * Windows Server 2008 (R1, R2)
 
-Cookbooks
----------
+#### Cookbooks
+- windows
 
-* windows
 
 Attributes
 ==========
@@ -44,14 +40,13 @@ default
 Downloads and installs WiX to the location specified by `node['wix']['home']`.
 Also ensures `node['wix']['home']` is in the system path.
 
-License and Author
-==================
+License & Authors
+-----------------
 
-Author:: Seth Chisamore (<schisamo@opscode.com>)
+**Author:** Cookbook Engineering Team (<cookbooks@chef.io>)
 
-```text
-Copyright 2011-2015, Chef Software, Inc.
-
+**Copyright:** 2011-2015, Chef Software, Inc.
+```
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
