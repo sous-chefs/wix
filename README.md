@@ -20,8 +20,11 @@ Requirements
 * Windows 8, 8.1
 * Windows Server 2012 (R1, R2)
 
+#### Chef
+* Chef 11+
+
 #### Cookbooks
-- windows
+* windows
 
 
 Attributes
