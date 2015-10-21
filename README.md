@@ -4,7 +4,7 @@ WIX Cookbook
 [![Cookbook Version](https://img.shields.io/cookbook/v/wix.svg)](https://supermarket.chef.io/cookbooks/wix)
 
 
-The [Windows Installer XML](http://wix.sourceforge.net/) (WiX) is a toolset
+The [Windows Installer XML](http://wixtoolset.org/) (WiX) is a toolset
 that builds Windows installation packages from XML source code. The toolset
 supports a command line environment that developers may integrate into their
 build processes to build MSI and MSM setup packages. This cookbook installs the
@@ -12,10 +12,13 @@ full WiX suite of tools.
 
 Requirements
 ------------
+
 #### Platforms
-* Windows Server 2003 R2
+* Windows Vista
 * Windows 7
 * Windows Server 2008 (R1, R2)
+* Windows 8, 8.1
+* Windows Server 2012 (R1, R2)
 
 #### Cookbooks
 - windows
@@ -45,7 +48,7 @@ License & Authors
 **Author:** Cookbook Engineering Team (<cookbooks@chef.io>)
 
 **Copyright:** 2011-2015, Chef Software, Inc.
-```
+```text
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
