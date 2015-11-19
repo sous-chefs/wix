@@ -18,18 +18,18 @@
 # limitations under the License.
 #
 
-download_url = CodePlex.download_url('wix', node['wix']['download_id'])
-file_name = 'wix-binaries.zip'
+download_url  = CodePlex.download_url('wix', node['wix']['download_id'])
+download_path = File.join(Chef::Config[:file_cache_path], "wix-#{node['wix']['download_id']}.zip")
 
-remote_file "#{Chef::Config[:file_cache_path]}/#{file_name}" do
+remote_file download_path do
   source download_url
   checksum node['wix']['checksum']
-  notifies :unzip, 'windows_zipfile[wix]', :immediately
+  notifies :unzip, "windows_zipfile[#{node['wix']['home']}]", :immediately
 end
 
-windows_zipfile 'wix' do
-  path node['wix']['home']
-  source "#{Chef::Config[:file_cache_path]}/#{file_name}"
+windows_zipfile node['wix']['home'] do
+  source download_path
+  overwrite true
   action :nothing
 end
 
