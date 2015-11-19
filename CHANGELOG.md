@@ -2,6 +2,10 @@ wix Cookbook CHANGELOG
 ======================
 This file is used to list changes made in each version of the wix cookbook.
 
+## v2.0.1
+* Allow upgrades by setting `overwrite` attribute to true
+* Add basic InSpec integration test coverage
+
 ## v2.0.0
 * Update to use WIX Toolset 3.10
 * Removed Windows 2003 as a supported platform and added all current 2008+ releases
