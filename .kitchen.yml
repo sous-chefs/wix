@@ -28,3 +28,6 @@ suites:
   - name: default
     run_list:
       - recipe[wix::default]
+  - name: upgrade
+    run_list:
+      - recipe[wix-upgrade::default]
