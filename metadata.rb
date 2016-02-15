@@ -7,7 +7,7 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version '2.0.1'
 supports 'windows'
 
-depends 'windows', '>= 1.2.2'
+depends 'windows', '>= 1.38.2'
 
 source_url 'https://github.com/chef-cookbooks/wix' if respond_to?(:source_url)
 issues_url 'https://github.com/chef-cookbooks/wix/issues' if respond_to?(:issues_url)
