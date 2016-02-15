@@ -10,7 +10,7 @@ class CodePlex
   def self.download_url(project_name, download_id)
     download_url = nil
 
-    proxy_uri = URI.parse(Chef::Config[:http_proxy] || "")
+    proxy_uri = URI.parse(Chef::Config[:http_proxy] || '')
     http = Net::HTTP.new("#{project_name}.codeplex.com", 80, proxy_uri.host, proxy_uri.port)
 
     resp = http.get("/downloads/get/#{download_id}")
@@ -18,10 +18,10 @@ class CodePlex
     # GET /downloads/get/:ID for cookie and token
     if resp.is_a?(Net::HTTPSuccess)
       cookie = resp
-        .to_hash
-        .fetch('set-cookie', [])
-        .collect { |ea| ea[/^.*?;/] }
-        .join
+               .to_hash
+               .fetch('set-cookie', [])
+               .collect { |ea| ea[/^.*?;/] }
+               .join
 
       # extract the RequestVerificationToken
       token = resp.body.match(/name="__RequestVerificationToken" type="hidden" value="(.*?)"/)[1]
