@@ -13,11 +13,15 @@ class CodePlex
     proxy_uri = URI.parse(Chef::Config[:http_proxy] || "")
     http = Net::HTTP.new("#{project_name}.codeplex.com", 80, proxy_uri.host, proxy_uri.port)
 
-    # GET /downloads/get/:ID for cookie and token
     resp = http.get("/downloads/get/#{download_id}")
-    cookie = resp.to_hash['set-cookie'].collect { |ea| ea[/^.*?;/] }.join
 
+    # GET /downloads/get/:ID for cookie and token
     if resp.is_a?(Net::HTTPSuccess)
+      cookie = resp
+        .to_hash
+        .fetch('set-cookie', [])
+        .collect { |ea| ea[/^.*?;/] }
+        .join
 
       # extract the RequestVerificationToken
       token = resp.body.match(/name="__RequestVerificationToken" type="hidden" value="(.*?)"/)[1]
