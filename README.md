@@ -15,15 +15,12 @@ The [Windows Installer XML](http://wixtoolset.org/) (WiX) is a toolset that buil
 - Chef 11+
 
 ### Cookbooks
-- windows
+- windows 1.38.2+
 
 ## Attributes
-- `node['wix']['home']` - location to install WiX files to.  default is
-- `%SYSTEMDRIVE%\wix`
-- `node['wix']['download_id']` - CodePlex download id of the WiX binaries to
--  install. default is `1483378` (WiX v3.10)
-- `node['wix']['checksum']` - SHA256 of the WiX binaries zip file. default is
-- `b92d1555a1cedb4cf96c319dd60254bac8e7f6e5d85167b12e9fbfbc1bac87ab`
+- `node['wix']['home']` - location to install WiX files to.  default is `%SYSTEMDRIVE%\wix`
+- `node['wix']['download_id']` - CodePlex download id of the WiX binaries to install. default is `1540241` (WiX v3.10.2)
+- `node['wix']['checksum']` - SHA256 of the WiX binaries zip file. default is `03b8f46cb3abf1465fe8f9975a94a4e0f75c77267ff4d1fcb6d5b6a97567f549`
 
 ## Usage
 ###default.rb
