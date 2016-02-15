@@ -1,6 +1,14 @@
 # wix Cookbook CHANGELOG
 This file is used to list changes made in each version of the wix cookbook.
 
+## v2.0.2 (2016-02-15)
+- Require windows cookbook >= 1.38.2
+- Update WiX to 3.10.2
+- Avoid failures processing the cookie if the download wasn't successful in the Codeplex library
+- Update the rubocop config for Rubocop 0.37
+- Update all testing dependencies to the latest
+- Add Windows 2008 R2 to the Test Kitchen config (internal Chef Vagrant image)
+
 ## v2.0.1
 - Allow upgrades by setting `overwrite` attribute to true
 - Add basic InSpec integration test coverage
