@@ -16,7 +16,7 @@ windows_zipfile "unzip-wix-#{wix_download_id}" do
 end
 
 # now perform an upgrade to v3.10
-node.set['wix']['download_id'] = '1483378'
-node.set['wix']['checksum']    = 'b92d1555a1cedb4cf96c319dd60254bac8e7f6e5d85167b12e9fbfbc1bac87ab'
+node.normal['wix']['download_id'] = '1483378'
+node.normal['wix']['checksum']    = 'b92d1555a1cedb4cf96c319dd60254bac8e7f6e5d85167b12e9fbfbc1bac87ab'
 
 include_recipe 'wix::default'
