@@ -1,33 +1,40 @@
 # WIX Cookbook
+
 [![Build Status](https://travis-ci.org/chef-cookbooks/wix.svg?branch=master)](http://travis-ci.org/chef-cookbooks/wix) [![Cookbook Version](https://img.shields.io/cookbook/v/wix.svg)](https://supermarket.chef.io/cookbooks/wix)
 
 The [Windows Installer XML](http://wixtoolset.org/) (WiX) is a toolset that builds Windows installation packages from XML source code. The toolset supports a command line environment that developers may integrate into their build processes to build MSI and MSM setup packages. This cookbook installs the full WiX suite of tools.
 
 ## Requirements
+
 ### Platforms
-- Windows Vista
+
 - Windows 7
-- Windows Server 2008 (R1, R2)
+- Windows Server 2008 R2
 - Windows 8, 8.1
 - Windows Server 2012 (R1, R2)
 
 ### Chef
-- Chef 11+
+
+- Chef 12+
 
 ### Cookbooks
+
 - windows 1.38.2+
 
 ## Attributes
-- `node['wix']['home']` - location to install WiX files to.  default is `%SYSTEMDRIVE%\wix`
+
+- `node['wix']['home']` - location to install WiX files to. default is `%SYSTEMDRIVE%\wix`
 - `node['wix']['download_id']` - CodePlex download id of the WiX binaries to install. default is `1540241` (WiX v3.10.2)
 - `node['wix']['checksum']` - SHA256 of the WiX binaries zip file. default is `03b8f46cb3abf1465fe8f9975a94a4e0f75c77267ff4d1fcb6d5b6a97567f549`
 
 ## Usage
-###default.rb
+
+### default.rb
 
 Downloads and installs WiX to the location specified by `node['wix']['home']`. Also ensures `node['wix']['home']` is in the system path.
 
 ## License & Authors
+
 **Author:** Cookbook Engineering Team ([cookbooks@chef.io](mailto:cookbooks@chef.io))
 
 **Copyright:** 2011-2016, Chef Software, Inc.
