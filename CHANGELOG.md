@@ -1,6 +1,10 @@
 # wix Cookbook CHANGELOG
 This file is used to list changes made in each version of the wix cookbook.
 
+## 3.0.0 (2016-09-06)
+- Add chef_version metadata
+- Remove support for Chef 11
+
 ## v2.0.2 (2016-02-15)
 - Require windows cookbook >= 1.38.2
 - Update WiX to 3.10.2
