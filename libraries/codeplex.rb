@@ -29,7 +29,7 @@ class CodePlex
       # POST /releases/captureDownload for a download url
       post_headers = {
         'Cookie' => cookie,
-        'Content-Type' => 'application/x-www-form-urlencoded'
+        'Content-Type' => 'application/x-www-form-urlencoded',
       }
 
       post_data = "fileId=#{download_id}&clickOncePath=&allowRedirectToAds=false&__RequestVerificationToken=#{token}"
