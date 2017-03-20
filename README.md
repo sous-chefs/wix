@@ -1,6 +1,6 @@
 # WIX Cookbook
 
-[![Build Status](https://travis-ci.org/chef-cookbooks/wix.svg?branch=master)](http://travis-ci.org/chef-cookbooks/wix) [![Cookbook Version](https://img.shields.io/cookbook/v/wix.svg)](https://supermarket.chef.io/cookbooks/wix)
+[![Build status](https://ci.appveyor.com/api/projects/status/9gekfdko5uyaa3li/branch/master?svg=true)](https://ci.appveyor.com/project/ChefWindowsCookbooks/wix/branch/master) [![Cookbook Version](https://img.shields.io/cookbook/v/wix.svg)](https://supermarket.chef.io/cookbooks/wix)
 
 The [Windows Installer XML](http://wixtoolset.org/) (WiX) is a toolset that builds Windows installation packages from XML source code. The toolset supports a command line environment that developers may integrate into their build processes to build MSI and MSM setup packages. This cookbook installs the full WiX suite of tools.
 
