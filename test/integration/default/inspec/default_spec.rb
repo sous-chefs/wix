@@ -9,16 +9,6 @@
   end
 end
 
-#
-# Once https://github.com/chef/inspec/pull/245 is merged we'll be able to
-# do this:
-#
-#   describe os_env('PATH') do
-#     its('split') { should include('C:\wix') }
-#   end
-#
-# Until then we can workaround the issue as follows.
-#
-describe script('$Env:PATH') do
-  its('stdout') { should include('C:\wix') }
+describe os_env('PATH') do
+  its('split') { should include('C:\wix') }
 end
