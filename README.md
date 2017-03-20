@@ -19,7 +19,7 @@ The [Windows Installer XML](http://wixtoolset.org/) (WiX) is a toolset that buil
 
 ### Cookbooks
 
-- windows 1.38.2+
+- windows 2.0+
 
 ## Attributes
 
