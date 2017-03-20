@@ -1,6 +1,11 @@
 # wix Cookbook CHANGELOG
 This file is used to list changes made in each version of the wix cookbook.
 
+## 3.2.0 (2017-03-20)
+
+- Test with Local Delivery instead of Rake
+- Require Windows cookbook 2.0 or later
+
 ## 3.1.0 (2016-09-16)
 - Require Chef 12.1 not 12.0
 
