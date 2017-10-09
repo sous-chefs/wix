@@ -18,8 +18,8 @@
 # limitations under the License.
 #
 
-download_url  = CodePlex.download_url('wix', node['wix']['download_id'])
-download_path = File.join(Chef::Config[:file_cache_path], "wix-#{node['wix']['download_id']}.zip")
+download_url  = 'https://github.com/wixtoolset/wix3/releases/download/wix311rtm/wix311-binaries.zip'
+download_path = File.join(Chef::Config[:file_cache_path], 'wix311-binaries.zip')
 
 remote_file download_path do
   source download_url

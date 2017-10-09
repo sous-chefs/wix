@@ -18,8 +18,6 @@
 # limitations under the License.
 #
 
-# WiX v3.10.2
-default['wix']['download_id'] = '1540241'
-default['wix']['checksum']    = '03b8f46cb3abf1465fe8f9975a94a4e0f75c77267ff4d1fcb6d5b6a97567f549'
+default['wix']['checksum'] = 'da034c489bd1dd6d8e1623675bf5e899f32d74d6d8312f8dd125a084543193de'
 
 default['wix']['home'] = "#{ENV['SYSTEMDRIVE']}\\wix"
