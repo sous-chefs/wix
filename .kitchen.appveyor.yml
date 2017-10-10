@@ -15,6 +15,6 @@ platforms:
   - name: windows-2012R2
 
 suites:
-  - name: upgrade
+  - name: install
     run_list:
-      - recipe[wix-upgrade::default]
+      - recipe[wix-install::default]
