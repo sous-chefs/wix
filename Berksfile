@@ -7,5 +7,5 @@ def fixture(name)
 end
 
 group :integration do
-  fixture 'wix-upgrade'
+  fixture 'wix-install'
 end
