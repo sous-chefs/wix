@@ -24,7 +24,6 @@ The [Windows Installer XML](http://wixtoolset.org/) (WiX) is a toolset that buil
 ## Attributes
 
 - `node['wix']['home']` - location to install WiX files to. default is `%SYSTEMDRIVE%\wix`
-- `node['wix']['download_id']` - CodePlex download id of the WiX binaries to install. default is `1540241` (WiX v3.10.2)
 - `node['wix']['checksum']` - SHA256 of the WiX binaries zip file. default is `03b8f46cb3abf1465fe8f9975a94a4e0f75c77267ff4d1fcb6d5b6a97567f549`
 
 ## Usage
@@ -37,7 +36,7 @@ Downloads and installs WiX to the location specified by `node['wix']['home']`. A
 
 **Author:** Cookbook Engineering Team ([cookbooks@chef.io](mailto:cookbooks@chef.io))
 
-**Copyright:** 2011-2016, Chef Software, Inc.
+**Copyright:** 2011-2018, Chef Software, Inc.
 
 ```text
 Licensed under the Apache License, Version 2.0 (the "License");

@@ -1,6 +1,11 @@
 # wix Cookbook CHANGELOG
 This file is used to list changes made in each version of the wix cookbook.
 
+## 4.0.0 (2018-01-29)
+
+- Removes codeplex functionality as it will no longer be updated.
+- Changes wix toolkit
+
 ## 3.2.0 (2017-03-20)
 
 - Test with Local Delivery instead of Rake
