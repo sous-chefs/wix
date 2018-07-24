@@ -1,6 +1,10 @@
 # wix Cookbook CHANGELOG
 This file is used to list changes made in each version of the wix cookbook.
 
+## 5.0.0 (2018-07-24)
+
+- Depend on Chef 13.4 for built in windows_path
+
 ## 4.0.0 (2018-01-29)
 
 - Removes codeplex functionality as it will no longer be updated.
