@@ -15,7 +15,7 @@ The [Windows Installer XML](http://wixtoolset.org/) (WiX) is a toolset that buil
 
 ### Chef
 
-- Chef 12.1+
+- Chef 13.4+
 
 ### Cookbooks
 
