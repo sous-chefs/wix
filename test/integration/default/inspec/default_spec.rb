@@ -1,4 +1,3 @@
-
 %w(
   candle.exe
   heat.exe
