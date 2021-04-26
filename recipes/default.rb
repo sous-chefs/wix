@@ -27,7 +27,7 @@ remote_file download_path do
   notifies :unzip, "windows_zipfile[#{node['wix']['home']}]", :immediately
 end
 
-windows_zipfile node['wix']['home'] do
+archive_file node['wix']['home'] do
   source download_path
   overwrite true
   action :nothing
