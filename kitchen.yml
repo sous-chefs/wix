@@ -22,12 +22,12 @@ platforms:
   # require a `vagrant login`.
   #
 
-  - name: windows-2008r2
-    driver_config:
-      box: tas50/windows_2008r2
-  - name: windows-server-2012r2
+  - name: windows-server-2016
     driver:
-      box: tas50/windows_2012r2
+      box: tas50/windows_2016
+  - name: windows-server-2019
+    driver:
+      box: tas50/windows_2019
 
 suites:
   - name: default
