@@ -40,7 +40,7 @@ jobs:
     strategy:
       matrix:
         os:
-          - 'windows-2019'
+          - 'windows-server-2019'
         suite:
           - 'default'
       fail-fast: false
