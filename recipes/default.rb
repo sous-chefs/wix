@@ -37,7 +37,6 @@ directory node['wix']['home'] do
   action :create
 end
 
-
 # update path
 windows_path node['wix']['home'] do
   action :add
