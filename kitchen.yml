@@ -17,12 +17,6 @@ verifier:
   name: inspec
 
 platforms:
-  #
-  # The following (private) boxes are shared via Atlas. Please note this
-  # requires adding your Atlas account to the `Chef` org and will
-  # require a `vagrant login`.
-  #
-
   - name: windows-server-2016
     driver:
       box: tas50/windows_2016
