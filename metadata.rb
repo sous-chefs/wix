@@ -9,5 +9,3 @@ issues_url        'https://github.com/sous-chefs/wix/issues'
 chef_version      '>= 13.4'
 
 supports 'windows'
-
-depends 'windows', '>= 2.0'
