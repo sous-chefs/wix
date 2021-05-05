@@ -5,8 +5,7 @@ This file is used to list changes made in each version of the wix cookbook.
 ## Unreleased
 
 - Sous Chefs Adoption
-- Edit misc tests
-- make tests headless
+- Update and fix testing
 
 ## 5.0.0 (2018-07-24)
 

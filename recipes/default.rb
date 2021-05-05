@@ -33,9 +33,7 @@ archive_file download_path do
   action :nothing
 end
 
-directory node['wix']['home'] do
-  action :create
-end
+directory node['wix']['home']
 
 # update path
 windows_path node['wix']['home'] do
