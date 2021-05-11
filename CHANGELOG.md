@@ -2,6 +2,8 @@
 
 This file is used to list changes made in each version of the wix cookbook.
 
+## Unreleased
+
 ## 6.0.0 - *2021-05-11*
 
 - Sous Chefs Adoption
