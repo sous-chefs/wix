@@ -24,14 +24,16 @@ download_path = File.join(Chef::Config[:file_cache_path], 'wix311-binaries.zip')
 remote_file download_path do
   source download_url
   checksum node['wix']['checksum']
-  notifies :unzip, "windows_zipfile[#{node['wix']['home']}]", :immediately
+  notifies :extract, "archive_file[#{download_path}]", :immediately
 end
 
-windows_zipfile node['wix']['home'] do
-  source download_path
+archive_file download_path do
+  destination node['wix']['home']
   overwrite true
   action :nothing
 end
+
+directory node['wix']['home']
 
 # update path
 windows_path node['wix']['home'] do

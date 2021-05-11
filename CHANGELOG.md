@@ -1,5 +1,11 @@
 # wix Cookbook CHANGELOG
+
 This file is used to list changes made in each version of the wix cookbook.
+
+## Unreleased
+
+- Sous Chefs Adoption
+- Update and fix testing
 
 ## 5.0.0 (2018-07-24)
 
@@ -16,13 +22,16 @@ This file is used to list changes made in each version of the wix cookbook.
 - Require Windows cookbook 2.0 or later
 
 ## 3.1.0 (2016-09-16)
+
 - Require Chef 12.1 not 12.0
 
 ## 3.0.0 (2016-09-06)
+
 - Add chef_version metadata
 - Remove support for Chef 11
 
 ## v2.0.2 (2016-02-15)
+
 - Require windows cookbook >= 1.38.2
 - Update WiX to 3.10.2
 - Avoid failures processing the cookie if the download wasn't successful in the Codeplex library
@@ -31,10 +40,12 @@ This file is used to list changes made in each version of the wix cookbook.
 - Add Windows 2008 R2 to the Test Kitchen config (internal Chef Vagrant image)
 
 ## v2.0.1
+
 - Allow upgrades by setting `overwrite` attribute to true
 - Add basic InSpec integration test coverage
 
 ## v2.0.0
+
 - Update to use WIX Toolset 3.10
 - Removed Windows 2003 as a supported platform and added all current 2008+ releases
 - Update readme to point to the new post-Sourceforge WIX homepage
@@ -52,11 +63,14 @@ This file is used to list changes made in each version of the wix cookbook.
 - Added a chefignore file to limit what files are uploaded to the Chef server
 - Added issues_url and source_url metadata for Supermarket
 
-## v1.1.0:
+## v1.1.0
+
 - [COOK-2762] - WiX download URL returns a 404
 
-## v1.0.2:
+## v1.0.2
+
 - [COOK-1340] - update version and location
 
-## v1.0.0:
+## v1.0.0
+
 - initial release

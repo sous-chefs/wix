@@ -1,0 +1,6 @@
+driver:
+  name: exec
+
+platforms:
+  - name: windows-server-2016
+  - name: windows-server-2019
