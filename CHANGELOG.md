@@ -2,7 +2,7 @@
 
 This file is used to list changes made in each version of the wix cookbook.
 
-## Unreleased
+## 6.0.5 - *2023-11-01*
 
 ## 6.0.4 - *2023-02-14*
 
