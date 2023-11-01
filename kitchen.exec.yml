@@ -1,6 +1,7 @@
-driver:
-  name: exec
+---
+driver: { name: exec }
+transport: { name: exec }
 
 platforms:
-  - name: windows-server-2016
-  - name: windows-server-2019
+  - name: macos-latest
+  - name: windows-latest
