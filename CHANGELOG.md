@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of the wix cookbook.
 
+## [6.0.10](https://github.com/sous-chefs/wix/compare/6.0.9...v6.0.10) (2025-10-16)
+
+
+### Bug Fixes
+
+* **ci:** Update workflows to use release pipeline ([#39](https://github.com/sous-chefs/wix/issues/39)) ([91c2de2](https://github.com/sous-chefs/wix/commit/91c2de242a5f0b52f2acf221dcae46a3e5319568))
+
 ## 6.0.2 - *2021-08-31*
 
 * Standardise files with files in sous-chefs/repo-management
