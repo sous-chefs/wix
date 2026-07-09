@@ -33,7 +33,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v7
       - name: Install Workstation
-        uses: sous-chefs/.github/.github/actions/install-workstation@8.0.2
+        uses: sous-chefs/.github/.github/actions/install-workstation@8.0.4
       - name: test-kitchen
         uses: actionshub/test-kitchen@3.0.0
         env:
