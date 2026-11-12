@@ -15,7 +15,7 @@ describe 'wix_install' do
       .with(source: 'https://github.com/wixtoolset/wix/releases/download/v7.0.1/wix-cli-x64.msi',
             checksum: '93673c89ab33b1fd3f07ad5e609b7cae694bd716b2914259b61a41c02303b64c',
             version: '7.0.1.0', installer_type: :msi,
-            options: 'INSTALLFOLDER="C:/Program Files/WiX Toolset v7.0"', returns: [0, 3010])
+            options: %r{INSTALLFOLDER="C:\\Program Files\\WiX Toolset v7\.0" /l\*v ".*wix-install\.log"}, returns: [0, 3010])
   end
 
   it 'leaves usage agreement acceptance explicit' do
@@ -49,7 +49,7 @@ describe 'wix_install' do
     it 'uses the caller-supplied source, checksum, version and path' do
       expect(chef_run).to install_windows_package('WiX Toolset Command-Line Tools')
         .with(source: 'https://packages.example/wix.msi', checksum: 'a' * 64,
-              version: '7.0.2.0', options: 'INSTALLFOLDER="C:/Build Tools/WiX"')
+              version: '7.0.2.0', options: %r{INSTALLFOLDER="C:\\Build Tools\\WiX" /l\*v ".*wix-install\.log"})
     end
   end
 

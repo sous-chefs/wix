@@ -36,3 +36,16 @@ jobs:
         run: |
           Remove-Item Env:PSModulePath -ErrorAction SilentlyContinue
           chef exec kitchen test ${{ matrix.suite }}-windows-latest --destroy=always
+      - name: Collect WiX installer diagnostics
+        if: failure()
+        run: |
+          New-Item -ItemType Directory -Path wix-logs -Force | Out-Null
+          Get-ChildItem "$env:TEMP/kitchen/cache/wix-install.log" -ErrorAction SilentlyContinue |
+            Copy-Item -Destination wix-logs
+      - name: Upload WiX installer diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: wix-${{ matrix.suite }}-${{ matrix.platform }}
+          path: wix-logs/*.log
+          if-no-files-found: warn

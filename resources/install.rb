@@ -23,7 +23,7 @@ action :install do
     checksum new_resource.checksum
     version "#{new_resource.version}.0"
     installer_type :msi
-    options "INSTALLFOLDER=\"#{new_resource.home}\""
+    options "INSTALLFOLDER=\"#{new_resource.home.tr('/', '\\')}\" /l*v \"#{::File.join(Chef::Config[:file_cache_path], 'wix-install.log').tr('/', '\\')}\""
     returns [0, 3010]
     action :install
   end

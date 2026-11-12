@@ -32,7 +32,7 @@ enable acceptance automatically; its separately gated build fixture needs
 explicit owner consent.
 
 See the [resource reference](documentation/wix_install.md),
-[migration guide](documentation/migration.md) and [testing guide](TESTING.md).
+[migration guide](migration.md) and [testing guide](TESTING.md).
 
 ## Licence
 
