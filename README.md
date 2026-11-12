@@ -16,6 +16,21 @@ WiX 7 requires explicit acceptance of its OSMF usage agreement before building
 packages. Review that agreement before selecting `accept_eula true`; the
 cookbook does not accept it by default.
 
+To approve, read the [OSMF agreement](https://wixtoolset.org/osmf/), confirm you
+are authorised to accept it for the organisation and execution account, then
+set the resource property explicitly:
+
+```ruby
+wix_install 'WiX' do
+  accept_eula true
+end
+```
+
+This accepts for the Chef execution account. A different build user can use
+`wix eula accept wix7` under that account after the same approval. CI does not
+enable acceptance automatically; its separately gated build fixture needs
+explicit owner consent.
+
 See the [resource reference](documentation/wix_install.md),
 [migration guide](documentation/migration.md) and [testing guide](TESTING.md).
 
