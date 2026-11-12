@@ -1,33 +1,34 @@
+---
 driver:
   name: vagrant
-  customize:
-    cpus: 2
-    memory: 4096
-
 transport:
   name: winrm
   elevated: true
-
 provisioner:
-  name: chef_zero
-  chef_license: accept
+  name: chef_infra
+  policyfile_path: Policyfile.rb
+  chef_license: accept-no-persist
   deprecations_as_errors: true
-  multiple_converge: 2
-
 verifier:
   name: inspec
-
 platforms:
-  - name: windows-server-2016
-    driver:
-      box: tas50/windows_2016
-  - name: windows-server-2019
-    driver:
+  - name: windows-2019
+    driver_config:
       box: tas50/windows_2019
-
+  - name: windows-2022
+    driver_config:
+      box: gusztavvargadr/windows-server-2022-standard
 suites:
   - name: default
-    run_list:
-      - recipe[wix::default]
-    driver:
-      gui: false
+    provisioner:
+      named_run_list: default
+      multiple_converge: 2
+      enforce_idempotency: true
+  - name: remove
+    provisioner:
+      named_run_list: remove
+  - name: build
+    provisioner:
+      named_run_list: build
+      multiple_converge: 2
+      enforce_idempotency: true

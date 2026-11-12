@@ -6,6 +6,6 @@ description       'Installs/Configures Windows Installer XML toolset (WiX)'
 version           '6.0.10'
 source_url        'https://github.com/sous-chefs/wix'
 issues_url        'https://github.com/sous-chefs/wix/issues'
-chef_version      '>= 15.0'
+chef_version      '>= 16.0'
 
 supports 'windows'

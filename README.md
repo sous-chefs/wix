@@ -1,66 +1,40 @@
-# WIX Cookbook
+# wix cookbook
 
-[![Cookbook Version](https://img.shields.io/cookbook/v/wix.svg)](https://supermarket.chef.io/cookbooks/wix)
-[![CI State](https://github.com/sous-chefs/wix/workflows/ci/badge.svg)](https://github.com/sous-chefs/wix/actions?query=workflow%3Aci)
-[![OpenCollective](https://opencollective.com/sous-chefs/backers/badge.svg)](#backers)
-[![OpenCollective](https://opencollective.com/sous-chefs/sponsors/badge.svg)](#sponsors)
-[![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
+Install current WiX Toolset command-line tools with a custom resource.
+Requires Chef Infra Client 16+, x64 Windows and .NET Framework 4.7.2 or later.
+Windows Server 2016/2019/2022/2025 remain supported with that prerequisite.
 
-The [Windows Installer XML](http://wixtoolset.org/) (WiX) is a toolset that builds Windows installation packages from XML source code. The toolset supports a command line environment that developers may integrate into their build processes to build MSI and MSM setup packages. This cookbook installs the full WiX suite of tools.
+```ruby
+wix_install 'WiX'
+```
 
-## Maintainers
+The default is the verified official WiX 7.0.1 MSI. It installs `wix.exe`,
+extensions, the machine PATH entry and WIX7 variable. The registered MSI handles
+upgrades and uninstall without removing shared components still in use.
 
-This cookbook is maintained by the Sous Chefs. The Sous Chefs are a community of Chef cookbook maintainers working together to maintain important cookbooks. If you’d like to know more please visit sous-chefs.org or come chat with us on the Chef Community Slack in #sous-chefs.
+WiX 7 requires explicit acceptance of its OSMF usage agreement before building
+packages. Review that agreement before selecting `accept_eula true`; the
+cookbook does not accept it by default.
 
-## Requirements
+To approve, read the [OSMF agreement](https://wixtoolset.org/osmf/), confirm you
+are authorised to accept it for the organisation and execution account, then
+set the resource property explicitly:
 
-### Platforms
+```ruby
+wix_install 'WiX' do
+  accept_eula true
+end
+```
 
-- Windows 7
-- Windows Server 2008 R2
-- Windows 8, 8.1
-- Windows Server 2012 (R1, R2)
+This accepts for the Chef execution account. A different build user can use
+`wix eula accept wix7` under that account after the same approval. CI does not
+enable acceptance automatically; its separately gated build fixture needs
+explicit owner consent.
 
-### Chef
+See the [resource reference](documentation/wix_install.md),
+[migration guide](migration.md) and [testing guide](TESTING.md).
 
-- Chef 13.4+
+## Licence
 
-### Cookbooks
-
-- windows 2.0+
-
-## Attributes
-
-- `node['wix']['home']` - location to install WiX files to. default is `%SYSTEMDRIVE%\wix`
-- `node['wix']['checksum']` - SHA256 of the WiX binaries zip file. default is `03b8f46cb3abf1465fe8f9975a94a4e0f75c77267ff4d1fcb6d5b6a97567f549`
-
-## Usage
-
-### default.rb
-
-Downloads and installs WiX to the location specified by `node['wix']['home']`. Also ensures `node['wix']['home']` is in the system path.
-
-## Contributors
-
-This project exists thanks to all the people who [contribute.](https://opencollective.com/sous-chefs/contributors.svg?width=890&button=false)
-
-### Backers
-
-Thank you to all our backers!
-
-![https://opencollective.com/sous-chefs#backers](https://opencollective.com/sous-chefs/backers.svg?width=600&avatarHeight=40)
-
-### Sponsors
-
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website.
-
-![https://opencollective.com/sous-chefs/sponsor/0/website](https://opencollective.com/sous-chefs/sponsor/0/avatar.svg?avatarHeight=100)
-![https://opencollective.com/sous-chefs/sponsor/1/website](https://opencollective.com/sous-chefs/sponsor/1/avatar.svg?avatarHeight=100)
-![https://opencollective.com/sous-chefs/sponsor/2/website](https://opencollective.com/sous-chefs/sponsor/2/avatar.svg?avatarHeight=100)
-![https://opencollective.com/sous-chefs/sponsor/3/website](https://opencollective.com/sous-chefs/sponsor/3/avatar.svg?avatarHeight=100)
-![https://opencollective.com/sous-chefs/sponsor/4/website](https://opencollective.com/sous-chefs/sponsor/4/avatar.svg?avatarHeight=100)
-![https://opencollective.com/sous-chefs/sponsor/5/website](https://opencollective.com/sous-chefs/sponsor/5/avatar.svg?avatarHeight=100)
-![https://opencollective.com/sous-chefs/sponsor/6/website](https://opencollective.com/sous-chefs/sponsor/6/avatar.svg?avatarHeight=100)
-![https://opencollective.com/sous-chefs/sponsor/7/website](https://opencollective.com/sous-chefs/sponsor/7/avatar.svg?avatarHeight=100)
-![https://opencollective.com/sous-chefs/sponsor/8/website](https://opencollective.com/sous-chefs/sponsor/8/avatar.svg?avatarHeight=100)
-![https://opencollective.com/sous-chefs/sponsor/9/website](https://opencollective.com/sous-chefs/sponsor/9/avatar.svg?avatarHeight=100)
+Apache-2.0. Original cookbook by Chef Software, Inc.; maintained by Sous Chefs.
+The installed WiX distribution and its usage agreement have separate terms.

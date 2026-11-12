@@ -1,0 +1,9 @@
+name: wix-remove
+title: WiX remove
+maintainer: Sous Chefs
+copyright: Sous Chefs
+summary: Verify current WiX command-line tools
+license: Apache-2.0
+version: 1.0.0
+supports:
+  - platform-family: windows
