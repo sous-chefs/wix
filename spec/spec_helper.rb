@@ -1,8 +1,3 @@
-require 'chefspec'
-require 'chefspec/policyfile'
+# frozen_string_literal: true
 
-RSpec.configure do |config|
-  config.color = true               # Use color in STDOUT
-  config.formatter = :documentation # Use the specified formatter
-  config.log_level = :error         # Avoid deprecation notice SPAM
-end
+require 'chefspec'
