@@ -2,6 +2,23 @@
 
 This file is used to list changes made in each version of the wix cookbook.
 
+## [7.0.0](https://github.com/sous-chefs/wix/compare/v6.0.10...v7.0.0) (2026-11-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* replace recipe installation with current WiX MSI resource ([#57](https://github.com/sous-chefs/wix/issues/57))
+
+### Features
+
+* replace recipe installation with current WiX MSI resource ([#57](https://github.com/sous-chefs/wix/issues/57)) ([5cdc5cd](https://github.com/sous-chefs/wix/commit/5cdc5cd33d971cfe8f013b7bded4d180d3b05429))
+
+
+### Bug Fixes
+
+* **ci:** Update workflows to use release pipeline ([#39](https://github.com/sous-chefs/wix/issues/39)) ([91c2de2](https://github.com/sous-chefs/wix/commit/91c2de242a5f0b52f2acf221dcae46a3e5319568))
+* migrate to Policyfile ([#49](https://github.com/sous-chefs/wix/issues/49)) ([934726a](https://github.com/sous-chefs/wix/commit/934726a2358c4f587c21a05e0fd101474951755b))
+
 ## [6.0.10](https://github.com/sous-chefs/wix/compare/6.0.9...v6.0.10) (2025-10-16)
 
 
